@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700italic,700,600italic,600,400italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700italic,700);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,400italic,500,500italic,700,700italic);
+@import "bootstrap";
+@import "bootstrap-sprockets";
 /*!
  * bootswatch v3.3.6
  * Homepage: http://bootswatch.com
@@ -14,7 +19,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'fira sans', 'roboto slab', 'roboto', 'Open Sans', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -114,7 +119,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Open Sans', monospace, monospace;
+  font-family: 'fira sans', 'roboto slab', 'roboto', 'Open Sans', monospace, monospace;
   font-size: 1em;
 }
 button,
@@ -1087,11 +1092,11 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'fira sans', 'roboto slab', 'roboto', 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #3e3f3a;
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 input,
 button,
@@ -1537,7 +1542,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Open Sans', Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: 'fira sans', 'roboto slab', 'roboto', 'Open Sans', Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 code {
   padding: 2px 4px;
@@ -3345,6 +3350,8 @@ fieldset[disabled] .btn-warning.focus {
   background-color: #f47c3c;
   border-color: transparent;
 }
+
+
 .btn-warning .badge {
   color: #f47c3c;
   background-color: #ffffff;
@@ -3527,14 +3534,11 @@ tbody.collapse.in {
 }
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 60px;
   left: 0;
-  z-index: 1000;
   display: none;
   float: left;
   min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0;
   list-style: none;
   font-size: 14px;
   text-align: left;
@@ -3564,12 +3568,13 @@ tbody.collapse.in {
   line-height: 1.42857143;
   color: #98978b;
   white-space: nowrap;
+  transition: 0.25s;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #98978b;
-  background-color: #f8f5f0;
+  color: #418fca;
+  background-color: transparent;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -4166,11 +4171,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: block;
 }
 .nav-tabs .dropdown-menu {
-  margin-top: -1px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 .navbar {
+  font-weight: lighter;
   position: relative;
   min-height: 60px;
   margin-bottom: 20px;
@@ -4264,7 +4269,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-fixed-top,
-  .navbar-fixed-bottom {
+  .roboto-fixed-bottom {
     border-radius: 0;
   }
 }
@@ -4371,8 +4376,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-form {
-  margin-left: -15px;
-  margin-right: -15px;
+
   padding: 10px 15px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
@@ -4492,33 +4496,42 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-right {
     float: right !important;
-    margin-right: -15px;
+    margin-right: 0px;
   }
   .navbar-right ~ .navbar-right {
     margin-right: 0;
   }
 }
 .navbar-default {
-  background-color: #418fca;
+  background-color: white;
   border-color: #418fca;
+  border-top: 0px solid transparent;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 3.5px solid #418fca;
 }
 .navbar-default .navbar-brand {
-  color: #ffffff;
+  font-weight: normal;
+  color: #418fca;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ffffff;
+  color: #418fca;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
+  font-weight: lighter;
   color: #8e8c84;
 }
 .navbar-default .navbar-nav > li > a {
-  color: white;
+  font-size: 500px;
+  font-weight: lighter;
+  color: #418fca;
+  /* Style Nav Links */
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: #418fca;
   background-color: transparent;
   text-decoration: underline;
 }
@@ -5996,7 +6009,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'fira sans', 'roboto slab', 'roboto', 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6114,7 +6127,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'fira sans', 'roboto slab', 'roboto', 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6381,7 +6394,7 @@ button.close {
   width: 20px;
   height: 20px;
   line-height: 1;
-  font-family: 'Open Sans', serif;
+  font-family: 'fira sans', 'Roboto Slab', 'Open Sans', serif;
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
@@ -6802,7 +6815,7 @@ input:focus,
 .nav {
   font-size: 11px;
   line-height: 22px;
-  font-weight: 500;
+  font-weight: lighter;
   text-transform: uppercase;
 }
 .nav .open > a,
@@ -6921,11 +6934,121 @@ input:focus,
     box-shadow: 0 0 0 transparent;
 }
 .space {
-  margin-top: 25px;
+  margin-top: 100px;
 }
 .blue {
   color: #418fca;
 }
 .lighter {
   font-weight: 500;
+}
+.nav {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #a9a9a9;
+  background-color: white;
+  z-index: 1000;
+}
+.dropdown {
+  width: 100px;
+  float: left;
+}
+.sandwhich {
+  width: 20px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.first-line {
+  margin-top: 18px;
+  width: 30px;
+  display: block;
+  height: 1px;
+  margin-bottom: 8px;
+  background-color: #a9a9a9;
+}
+.second-line {
+  width: 22.5px;
+  display: block;
+  height: 1px;
+  margin-bottom: 8px;
+  background-color: #a9a9a9;
+}
+.third-line {
+  width: 15px;
+  display: block;
+  height: 1px;
+  margin-bottom: 8px;
+  background-color: #a9a9a9;
+}
+.first-line:hover {
+  background-color: #418fca;
+}
+.second-line:hover {
+  background-color: #418fca;
+}
+.third-line:hover {
+  background-color: #418fca;
+}
+.sandwich-hover:hover .line {
+  background-color: #418fca;
+}
+.brand-con {
+  width: 50%;
+  margin-left: 25%;
+}
+.brand {
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+}
+.brand-text {
+  font-weight: 300;
+  text-transform: lowercase;
+  color: #418fca;
+}
+.force {
+  font-weight: 500;
+}
+#dropdown-body {
+  margin-top: -1px;
+  clear: both;
+}
+.links-right {
+  width: 17.5%;
+  float: right;
+  text-align: right;
+  margin-right: 75px;
+}
+.right {
+  line-height: 60px;
+  font-size: 125%;
+  text-transform: lowercase;
+  text-align: right;
+}
+.first {
+  clear: both;
+}
+.boxes {
+  background-color: white;
+  border: 1px solid #e1e1e1;
+  padding: 25px;
+  margin-top: 25px;
+}
+.link-title {
+  text-align: left;
+  color: #418fca;
+  font-size: 125%;
+}
+.link-title:hover {
+  text-decoration: underline;
+  color: #418fca;
+}
+.links-image {
+  max-width: 40%;
+  height: auto;
+  margin-left: 30%;
+  margin-top: 15px;
 }

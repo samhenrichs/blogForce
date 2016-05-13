@@ -1,0 +1,21 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="col-lg-12">
+      <%= image_tag @link.image.url %>
+    </div>
+    <span>Title: </span><%= @link.title %>
+    <br>
+    <span>Description: </span><%= @link.description %>
+    <br>
+    <span>Url: </span><%= @link.url %>
+    <br>
+    <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+      <%= link_to "Update Link", edit_link_path(@link), class: "btn-link" %> <%= link_to "Delete Link", link_path(@link), method: :delete, data: {confirm: "You sure bud?" }, class: "btn-link" %>
+    <% else %>
+
+    <% end %>
+  </body>
+</html>

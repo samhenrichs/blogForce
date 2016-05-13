@@ -5,43 +5,47 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="application.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-default" id="navbar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/pages/home">
-            BLOG FORCE
-          </a>
-        </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li><a href="/pages/home">Home</a></li>
-      <li><a href="/pages/how">How It Works</a></li>
-      <li><a href="/pages/contact">Contact Us</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li><a href="/pages/me">My Account</a></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <li><%= link_to "Sign In", new_user_session_path %></li>
+<nav class="nav">
+  <div class="dropdown">
+    <div class="sandwhich">
+      <div href="#" class="dropdown-toggle sandwich-hover" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <div class="first-line line"></div>
+      <div class="second-line line"></div>
+      <div class="third-line line"></div>
+      </div>
+
+      <ul class="dropdown-menu" id="dropdown-body">
+        <li><a href="/links">Home</a></li>
+        <li><a href="/pages/how">About</a></li>
+        <li><a href="/pages/contact">Contact Us</a></li>
+        <li role="separator" class="divider"></li>
+        <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+        <li role="separator" class="divider"></li>
+        <li><a href="/links/new">New Link</a></li>
         <% end %>
       </ul>
+
+    </div>
   </div>
+  <div class="links-right">
+    <% if user_signed_in? %>
+    <a href="/users/sign_in" class="btn-link right"><%= current_user.email %></a><span>/</span><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn-link right" %>
+    <% else %>
+    <a href="/users/sign_in" class="btn-link right">Sign In</a><span>/</span><a href="/users/sign_up" class="btn-link right">Sign Up</a>
+    <% end %>
   </div>
+
+  <div class="brand-con">
+    <div class="brand"><span class="brand-text"><em>blog </em><span class="force">Force</span></span></div>
   </div>
-  </nav>
+</nav>
 
   <div class="container">
-
     <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
       <div class="first alert alert-<%= name.to_s == "notice" ? "success" : "danger" %> alert-dismissable">
@@ -50,7 +54,9 @@
       </div>
     <% end %>
     <% end %>
+    <div class="space">
 
+    </div>
     <%= yield %>
   </div>
 </body>

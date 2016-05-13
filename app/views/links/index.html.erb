@@ -1,0 +1,36 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="space"></div>
+    <% if user_signed_in? %>
+
+      <% @links.each do |link| %>
+        <div class="col-lg-12 boxes">
+            <p class="link-title"><%= link_to link.title, link, class: "link-title" %></p>
+            <p><%= link.description %></p>
+            <p><%= truncate(link.url, :length => 50, :omission => "...") %></p>
+            <p><%= link_to "View Link", link, class: "btn-link" %></p>
+          </div>
+        </div>
+        <br>
+        <br>
+      <% end %>
+
+    <% else %>
+    <% @links.each do |link| %>
+      <div class="col-lg-12 boxes">
+          <p class="link-title"><%= link_to link.title, link, class: "link-title" %></p>
+          <p><%= link.description %></p>
+          <p><%= link.url %></p>
+          <p><a href="/pages/oops">View Link</a></p>
+        </div>
+      </div>
+      <br>
+      <br>
+    <% end %>
+    <% end %>
+
+  </body>
+</html>
