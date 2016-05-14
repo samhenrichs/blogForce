@@ -3128,25 +3128,25 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #418fca;
+  background-color: #5da0d2;
   border-color: transparent;
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #ffffff;
-  background-color: #418fca;
+  background-color: #5da0d2;
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-primary:hover {
   color: #ffffff;
-  background-color: #418fca;
+  background-color: #5da0d2;
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #418fca;
+  background-color: #5da0d2;
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-primary:active:hover,
@@ -3159,7 +3159,7 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus {
   color: #ffffff;
-  background-color: #418fca;
+  background-color: #5da0d2;
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-primary:active,
@@ -3176,11 +3176,11 @@ fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled.focus,
 .btn-primary[disabled].focus,
 fieldset[disabled] .btn-primary.focus {
-  background-color: #418fca;
+  background-color: #5da0d2;
   border-color: transparent;
 }
 .btn-primary .badge {
-  color: #418fca;
+  color: #5da0d2;
   background-color: #ffffff;
 }
 .btn-success {
@@ -3414,7 +3414,7 @@ fieldset[disabled] .btn-danger.focus {
   background-color: #ffffff;
 }
 .btn-link {
-  color: #418fca;
+  color: #5da0d2;
   font-weight: normal;
   border-radius: 0;
 }
@@ -3435,7 +3435,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #418fca;
+  color: #5da0d2;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -3443,7 +3443,7 @@ fieldset[disabled] .btn-link {
 fieldset[disabled] .btn-link:hover,
 .btn-link[disabled]:focus,
 fieldset[disabled] .btn-link:focus {
-  color: #418fca;
+  color: #5da0d2;
   text-decoration: none;
 }
 .btn-lg,
@@ -3564,16 +3564,17 @@ tbody.collapse.in {
   display: block;
   padding: 3px 20px;
   clear: both;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1.42857143;
   color: #98978b;
   white-space: nowrap;
   transition: 0.25s;
+  text-transform: capitalize;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #418fca;
+  color: #5da0d2;
   background-color: transparent;
 }
 .dropdown-menu > .active > a,
@@ -6937,7 +6938,7 @@ input:focus,
   margin-top: 100px;
 }
 .blue {
-  color: #418fca;
+  color: #5da0d2;
 }
 .lighter {
   font-weight: 500;
@@ -6983,17 +6984,8 @@ input:focus,
   margin-bottom: 8px;
   background-color: #a9a9a9;
 }
-.first-line:hover {
-  background-color: #418fca;
-}
-.second-line:hover {
-  background-color: #418fca;
-}
-.third-line:hover {
-  background-color: #418fca;
-}
 .sandwich-hover:hover .line {
-  background-color: #418fca;
+  background-color: #5da0d2;
 }
 .brand-con {
   width: 50%;
@@ -7003,24 +6995,25 @@ input:focus,
   text-align: center;
   line-height: 60px;
   font-size: 30px;
+  z-index: 50;
 }
 .brand-text {
   font-weight: 300;
-  text-transform: lowercase;
-  color: #418fca;
+  text-transform: none;
+  color: #5da0d2;
 }
 .force {
-  font-weight: 500;
+  font-weight: 300;
 }
 #dropdown-body {
   margin-top: -1px;
   clear: both;
 }
 .links-right {
-  width: 17.5%;
   float: right;
   text-align: right;
-  margin-right: 75px;
+  margin-right: 50px;
+  z-index: 10;
 }
 .right {
   line-height: 60px;
@@ -7044,11 +7037,49 @@ input:focus,
 }
 .link-title:hover {
   text-decoration: underline;
-  color: #418fca;
+  color: #5da0d2;
 }
 .links-image {
-  max-width: 40%;
+  width: 25vw;
   height: auto;
-  margin-left: 30%;
-  margin-top: 15px;
+}
+.image-show {
+  width: 65%;
+  height: auto;
+  border: 1px solid #a9a9a9;
+  float: left;
+  margin-left: 17.5%;
+}
+.show-image {
+  margin-bottom: 25px;
+}
+.show-title {
+  text-align: center;
+  font-size: 250%;
+}
+.image-title-con {
+  text-align: center;
+  color: #5da0d2;
+}
+.show-body {
+  margin-top: 25px;
+}
+.show-text {
+  margin-top: 375px;
+  text-align: justify;
+  clear: both;
+}
+.show-description {
+  font-size: 125%;
+  margin-top: 25px;
+}
+.link-whole {
+  background-color: white;
+  border: 1px solid #e1e1e1;
+  padding: 25px;
+  margin-top: 25px;
+}
+.url {
+  color: #5da0d2;
+
 }

@@ -1,21 +1,45 @@
 <html>
   <head>
-
+    <link rel="stylesheet" href="custom.css.scss">
   </head>
   <body>
-    <div class="col-lg-12">
-      <%= image_tag @link.image.url %>
+
+  <a href="/links" class="btn-link">Back</a>
+  <div class="link-whole">
+
+    <div class="image-title-con">
+      <span class="show-title"><%= @link.title %></span>
     </div>
-    <span>Title: </span><%= @link.title %>
-    <br>
-    <span>Description: </span><%= @link.description %>
-    <br>
-    <span>Url: </span><%= @link.url %>
-    <br>
+
+    <div class="show-body">
+
+      <div class="show-image">
+        <%= image_tag @link.image.url, class: "image-show" %>
+      </div>
+
+      <br>
+
+      <div class="show-text">
+        <span class="show-description"><%= @link.description %></span>
+      </div>
+
+      <br>
+
+      <div class="show-url">
+        <span class="url"><%= link_to @link.url, @link.url, class: "btn-link", target: "_blank" %></span>
+      </div>
+
+      <br>
+
+    </div>
     <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
-      <%= link_to "Update Link", edit_link_path(@link), class: "btn-link" %> <%= link_to "Delete Link", link_path(@link), method: :delete, data: {confirm: "You sure bud?" }, class: "btn-link" %>
+      <%= link_to "Update Link", edit_link_path(@link), class: "btn-link" %><span class="blue"> | </span><%= link_to "Delete Link", link_path(@link), method: :delete, data: {confirm: "You sure bud?" }, class: "btn-link" %>
     <% else %>
 
     <% end %>
+
+  </div>
+
+
   </body>
 </html>

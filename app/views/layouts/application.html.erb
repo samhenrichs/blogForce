@@ -24,6 +24,13 @@
         <li><a href="/pages/how">About</a></li>
         <li><a href="/pages/contact">Contact Us</a></li>
         <li role="separator" class="divider"></li>
+        <% if user_signed_in? %>
+        <li class="visible-xs"><a href="/pages/me"><%= current_user.email %></a></li>
+        <li class="visible-xs"><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn-link" %></li>
+        <% else %>
+        <li class="visible-xs"><a href="/users/sign_in">Sign In</a></li>
+        <li class="visible-xs"><a href="/users/sign_up">Sign Up</a></li>
+        <% end %>
         <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
         <li role="separator" class="divider"></li>
         <li><a href="/links/new">New Link</a></li>
@@ -32,20 +39,21 @@
 
     </div>
   </div>
-  <div class="links-right">
+  <div class="links-right hidden-xs">
     <% if user_signed_in? %>
-    <a href="/users/sign_in" class="btn-link right"><%= current_user.email %></a><span>/</span><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn-link right" %>
+    <a href="/pages/me" class="btn-link right"><%= current_user.email %></a><span>/</span><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn-link right" %>
     <% else %>
     <a href="/users/sign_in" class="btn-link right">Sign In</a><span>/</span><a href="/users/sign_up" class="btn-link right">Sign Up</a>
     <% end %>
   </div>
 
   <div class="brand-con">
-    <div class="brand"><span class="brand-text"><em>blog </em><span class="force">Force</span></span></div>
+    <div class="brand"><span class="brand-text">blog<span class="force"><sup>force</sup></span></span></div>
   </div>
 </nav>
 
   <div class="container">
+    <div class="space">
     <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
       <div class="first alert alert-<%= name.to_s == "notice" ? "success" : "danger" %> alert-dismissable">
@@ -54,7 +62,6 @@
       </div>
     <% end %>
     <% end %>
-    <div class="space">
 
     </div>
     <%= yield %>
