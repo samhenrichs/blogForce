@@ -24,7 +24,7 @@
         <li><a href="/pages/how">About</a></li>
         <li><a href="/pages/contact">Contact Us</a></li>
         <% if user_signed_in? %>
-        <li role="separator" class="divider"></li>
+        <li role="separator" class="divider visible-xs"></li>
         <li class="visible-xs"><a href="/pages/me"><%= current_user.email %></a></li>
         <li class="visible-xs"><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn-link" %></li>
         <% else %>

@@ -15,6 +15,7 @@ gem 'rails_12factor'
 gem "figaro"
 gem 'devise'
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem "paperclip-dropbox", ">= 1.3.0"
 
 group :development, :test do
   gem 'byebug'

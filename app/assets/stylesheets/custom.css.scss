@@ -7044,11 +7044,12 @@ input:focus,
   height: auto;
 }
 .image-show {
-  width: 65%;
+  width: 70%;
   height: auto;
   border: 1px solid #a9a9a9;
   float: left;
-  margin-left: 17.5%;
+  margin-left: 15%;
+  margin-bottom: 25px;
 }
 .show-image {
   margin-bottom: 25px;
@@ -7065,7 +7066,6 @@ input:focus,
   margin-top: 25px;
 }
 .show-text {
-  margin-top: 375px;
   text-align: justify;
   clear: both;
 }
@@ -7081,5 +7081,7 @@ input:focus,
 }
 .url {
   color: #5da0d2;
+}
+.lets {
 
 }
