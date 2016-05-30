@@ -6,8 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<script type="text/javascript" src="application.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <script type="text/javascript" src="application.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <nav class="nav">
@@ -41,7 +42,7 @@
   </div>
   <div class="links-right hidden-xs">
     <% if user_signed_in? %>
-    <a href="/pages/me" class="btn-link right"><%= current_user.email %></a><span>/</span><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn-link right" %>
+    <a href="/campaigns" class="btn-link right"><%= current_user.email %></a><span>/</span><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn-link right" %>
     <% else %>
     <a href="/users/sign_in" class="btn-link right">Sign In</a><span>/</span><a href="/users/sign_up" class="btn-link right">Sign Up</a>
     <% end %>

@@ -4,5 +4,6 @@ class Link < ActiveRecord::Base
       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
 
   validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
+  validates :website, presence: true
 
 end

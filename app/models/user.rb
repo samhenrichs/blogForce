@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   validates :website, presence: true
 
+  has_many :campaigns, dependent: :destroy
+
 end

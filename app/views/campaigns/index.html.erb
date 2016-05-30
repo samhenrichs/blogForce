@@ -1,0 +1,38 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h1 class="blue text-center">Your Account</h1>
+    <p>Your Email: <%= current_user.email %></p>
+    <p>Your Website: <a class="btn-link"><%= current_user.website %></a></p>
+
+    <br>
+
+    <h3>Your Campaigns:</h3>
+    <% @campaigns = Campaign.all %>
+    <% @campaigns.each do |campaign| %>
+      <% if campaign.name == current_user.email || current_user.email == "sbhenrichs@gmail.com"%>
+
+        <%= campaign.productlink %>
+        <br>
+        <%= campaign.name %>
+        <br>
+        <%= campaign.website %>
+        <br>
+        <%= campaign.description %>
+        <br>
+        <%= campaign.date %>
+        <br>
+        <p><%= link_to "View Campaign", campaign, class: "btn-link" %></p>
+        <div class="littlespace"></div>
+
+      <% else %>
+
+      <% end %>
+    <% end %>
+    <div class="space">
+      <a href="/users/edit" class="btn btn-primary">Edit Profile</a>
+    </div>
+  </body>
+</html>

@@ -3,12 +3,18 @@
 
   </head>
   <body>
+    <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
     <h1>Update Link</h1>
     <%= form_for @link do |f| %>
 
       <div class="form-group">
         <%= f.label :title %>
         <%= f.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :"Name For Campaign" %>
+        <%= f.text_field :product, class: "form-control" %>
       </div>
 
       <div class="form-group">
@@ -30,6 +36,7 @@
       <%= f.submit :"Update Link", class: "btn btn-primary" %>
       </div>
 
+    <% end %>
     <% end %>
   </body>
 </html>

@@ -1,0 +1,35 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <p>
+      <h4><span class="blue">Link to Product:</span></h4>
+
+      <span class="campaign-links">
+        <%= link_to @campaign.productlink, @campaign.productlink, target: "_blank", class: "campaign-links" %>
+      </span>
+
+    </p>
+    <br>
+    <p>
+      <h4><span class="blue">Your Email:</span></h4>
+      <%= @campaign.name %>
+    </p>
+    <br>
+    <p>
+      <h4><span class="blue">Your Website:</span></h4>
+      <%= @campaign.website %>
+    </p>
+    <br>
+    <p>
+      <h4><span class="blue">Product Description:</span></h4>
+      <%= @campaign.description %>
+    </p>
+    <br>
+    <p>
+      <h4><span class="blue">Date Started:</span></h4>
+      <%= @campaign.date %>
+    </p>
+  </body>
+</html>

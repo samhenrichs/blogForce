@@ -21,10 +21,17 @@ class LinksController < ApplicationController
 
   def show
       @link = Link.find(params[:id])
+
+      if user_signed_in?
+
+      else
+        redirect_to "/pages/oops"
+      end
   end
 
   def edit
     @link = Link.find(params[:id])
+    
   end
 
   def update
@@ -48,7 +55,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:title, :url, :description, :image)
+    params.require(:link).permit(:title, :url, :description, :image, :product)
   end
 
 end

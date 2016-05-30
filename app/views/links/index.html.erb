@@ -4,29 +4,30 @@
   </head>
   <body>
     <% if user_signed_in? %>
-    <div class="space"></div>
       <% @links.each do |link| %>
-        <div class="col-lg-12 boxes">
-          <p class="link-title"><%= link_to link.title, link, class: "link-title" %></p>
-          <p><%= link.description %></p>
-          <p><%= truncate(link.url, :length => 50, :omission => "...") %></p>
-          <p><%= link_to "View Link", link, class: "btn-link" %></p>
+        <div class="boxes">
+          <span class="link-title"><%= link_to link.title, link, class: "link-title" %></span>
+          <br>
+          <br>
+          <span><%= link.description %></span>
+          <br>
+          <br>
+          <span><%= link_to "View Link", link, class: "btn-link" %></span>
         </div>
-        <br>
-        <br>
+
+        <div class="index-lines"></div>
+
       <% end %>
 
     <% else %>
-    <div class="space"></div>
       <% @links.each do |link| %>
-        <div class="col-lg-12 boxes">
-          <p class="link-title"><%= link_to link.title, link, class: "link-title" %></p>
-          <p><%= link.description %></p>
-          <p><%= truncate(link.url, :length => 50, :omission => "...") %></p>
-          <p><%= link_to "View Link", link, class: "btn-link" %></p>
-        </div>
-        <br>
-        <br>
+      <div class="boxes">
+        <span class="link-title"><%= link_to link.title, link, class: "link-title" %></span>
+        <span><%= link.description %></span>
+        <span><%= link_to "View Link", link, class: "btn-link" %></span>
+      </div>
+
+      <div class="index-lines"></div>
     <% end %>
     <% end %>
 

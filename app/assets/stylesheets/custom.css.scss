@@ -1096,7 +1096,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #3e3f3a;
-  background-color: #fafafa;
+  background-color: #ffffff;
 }
 input,
 button,
@@ -7026,9 +7026,7 @@ input:focus,
 }
 .boxes {
   background-color: white;
-  border: 1px solid #e1e1e1;
-  padding: 25px;
-  margin-top: 25px;
+  width: 100%;
 }
 .link-title {
   text-align: left;
@@ -7084,4 +7082,33 @@ input:focus,
 }
 .lets {
 
+}
+.packed {
+  line-height: 40px;
+}
+.littlespace {
+  margin-top: 25px;
+}
+.underline {
+  text-decoration: underline;
+}
+.campaign-links {
+  color: black;
+}
+.campaign-links:hover {
+  color: black;
+  text-decoration: underline;
+}
+.campaign-links:active {
+  color: black;
+}
+.campaign-links:focus {
+  color: black;
+}
+.index-lines {
+  width: 100%;
+  background-color: rgba(0,0,0,0.4);
+  height: 1px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
