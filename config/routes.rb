@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'home/Home'
+
   devise_for :users
   resources :links
   resources :campaigns
@@ -10,5 +12,6 @@ Rails.application.routes.draw do
   get 'pages/how'
   get 'pages/oops'
   get 'pages/notyours'
+  get 'pages/list'
 
 end

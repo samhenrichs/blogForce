@@ -1,0 +1,18 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+
+    <div class="users">
+      <% @users = User.all %>
+      <% @users.each do |user| %>
+        <%= user.email %>
+        <span> | </span>
+        <a class="btn-link"><%= user.website %></a>
+        <br>
+      <% end %>
+    </div>
+
+  </body>
+</html>
