@@ -4,8 +4,9 @@
   </head>
   <body>
 
-    <h1>New Link</h1>
+    <h1 class="blue">New Link</h1>
     <br>
+    <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
     <%= form_for @link do |f| %>
 
       <div class="form-group">
@@ -37,6 +38,7 @@
       <%= f.submit :"Create Link", class: "btn btn-primary" %>
       </div>
 
+    <% end %>
     <% end %>
   </body>
 </html>

@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
 
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
@@ -17,6 +16,7 @@ gem "figaro"
 gem 'devise'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem "paperclip-dropbox", ">= 1.3.0"
+gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   gem 'byebug'

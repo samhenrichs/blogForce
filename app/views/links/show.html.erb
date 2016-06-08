@@ -8,13 +8,13 @@
   <div class="link-whole">
 
     <div class="image-title-con">
-      <span class="show-title"><%= @link.title %></span>
+      <span class="show-title lighter"><%= @link.title %></span>
     </div>
 
     <div class="show-body">
 
       <div class="show-image">
-        
+        <%= image_tag @link.image.url, class: "image-show" %>
       </div>
 
       <br>
@@ -27,27 +27,30 @@
       <br>
 
     <br>
-    <span class="url"><%= link_to "View Product On Amazon", @link.url, class: "btn-link", target: "_blank" %></span>
+
+    <p class="text-center show-links">
+    <span class="url"><%= link_to "View Product", @link.url, class: "btn-link", target: "_blank" %></span>
     <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
       <span class="blue"> | </span><%= link_to "Update Link", edit_link_path(@link), class: "btn-link" %><span class="blue"> | </span><%= link_to "Delete Link", link_path(@link), method: :delete, data: {confirm: "You sure bud?" }, class: "btn-link" %>
+    </p>
     <% else %>
 
     <% end %>
 
     <%= form_for :campaign, url: campaigns_path do |f| %>
-      <%= f.text_field :name, value: current_user.email %>
+      <%= f.hidden_field :name, value: current_user.email %>
+      <%= f.hidden_field :product, value: @link.product %>
+      <%= f.hidden_field :title, value: @link.title %>
+      <%= f.hidden_field :website, value: current_user.website %>
+      <%= f.hidden_field :productlink, value: @link.url %>
+      <%= f.hidden_field :description, value: @link.description %>
+      <%= f.hidden_field :date, value: Date.today.to_s %>
       <br>
-      <%= f.text_field :product, value: @link.product %>
       <br>
-      <%= f.text_field :website, value: current_user.website %>
-      <br>
-      <%= f.text_field :productlink, value: @link.url %>
-      <br>
-      <%= f.text_area :description, value: @link.description %>
-      <br>
-      <%= f.text_field :date, value: Date.today.to_s %>
-      <br>
-      <%= f.submit :"Let's Go Make Some Money", class: "btn-lg btn-primary" %>
+    <div class="button-center-con">
+      <%= f.submit :"Start Campaign", class: "btn btn-primary btn-lg button-center" %>
+    </div>
+
     <% end %>
 
   </div>

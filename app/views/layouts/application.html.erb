@@ -42,14 +42,14 @@
   </div>
   <div class="links-right hidden-xs">
     <% if user_signed_in? %>
-    <a href="/campaigns" class="btn-link right"><%= current_user.email %></a><span>/</span><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn-link right" %>
+    <a href="/campaigns" class="link-under right"><%= current_user.email %></a><span>/</span><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "link-under right" %>
     <% else %>
-    <a href="/users/sign_in" class="btn-link right">Sign In</a><span>/</span><a href="/users/sign_up" class="btn-link right">Sign Up</a>
+    <a href="/users/sign_in" class="link-under right">Sign In</a><span>/</span><a href="/users/sign_up" class="link-under right">Sign Up</a>
     <% end %>
   </div>
 
   <div class="brand-con">
-    <div class="brand"><span class="brand-text">blog/force</span></div>
+    <div class="brand"><a href="/links" class="brand-text"><span class="brand-text">blog/force</span></a></div>
   </div>
 </nav>
 

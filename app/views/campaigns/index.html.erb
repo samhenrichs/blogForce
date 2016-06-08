@@ -3,36 +3,46 @@
 
   </head>
   <body>
-    <h1 class="blue text-center">Your Account</h1>
+    <h1 class="blue text-center lighter">Your Account</h1>
     <p>Your Email: <%= current_user.email %></p>
-    <p>Your Website: <a class="btn-link"><%= current_user.website %></a></p>
+    <p>Your Website: <%= link_to current_user.website, current_user.website, class: "btn-link", target: "_blank" %></p>
 
     <br>
 
-    <h3>Your Campaigns:</h3>
+    <h2 class="lighter">Your Campaigns:</h2>
+    <br>
     <% @campaigns = Campaign.all %>
     <% @campaigns.each do |campaign| %>
       <% if campaign.name == current_user.email || current_user.email == "sbhenrichs@gmail.com"%>
 
-        <%= campaign.productlink %>
-        <br>
-        <%= campaign.name %>
-        <br>
-        <%= campaign.website %>
+        <h3 class="blue lighter text-center"><%= campaign.product %></h3>
         <br>
         <%= campaign.description %>
         <br>
         <%= campaign.date %>
         <br>
-        <p><%= link_to "View Campaign", campaign, class: "btn-link" %></p>
+        <br>
+        <div>
+          <% if current_user.try(:email) == campaign.name || current_user.email == "sbhenrichs@gmail.com"%>
+            <%= link_to "View Campaign", campaign, class: "btn-link text-center" %>
+          <% else %>
+            <div class="text-center hundred">
+              <a href="/pages/notyours" class="btn-link text-center">View Campaign</a>
+            </div>
+          <% end %>
+        </div>
         <div class="littlespace"></div>
 
       <% else %>
 
       <% end %>
     <% end %>
-    <div class="space">
+    <div class="space"></div>
+
+    <div class="button-center-con">
       <a href="/users/edit" class="btn btn-primary">Edit Profile</a>
     </div>
+
+    <div class="space"></div>
   </body>
 </html>

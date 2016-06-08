@@ -3,33 +3,22 @@
 
   </head>
   <body>
-    <p>
-      <h4><span class="blue">Link to Product:</span></h4>
+    <h1 class="blue lighter text-center"><%= @campaign.product %></h1>
+    <h6 class="text-center lighter">Not sure what to do? <a href="/pages/help" class="btn-link">Click here.</a></h6>
+    <br>
+    <p class="lighter onetwofive"><%= @campaign.description %></p>
+    <br>
+    <h3 class="lighter">Additional Information:</h3>
+    <br>
+    <p><span class="blue">Your Website: </span><%= link_to current_user.website, current_user.website, class: "btn-link-black", target: "_blank" %></p>
+    <p><span class="blue">Your Email: </span><%= current_user.email %></p>
+    <p><span class="blue">Date Started: </span><%= @campaign.date %></p>
+    <p><span class="blue">Product On Amazon: </span><%= link_to truncate(@campaign.productlink, :length => 75), @campaign.productlink, class: "btn-link-black", target: "_blank" %></p>
+    <br>
 
-      <span class="campaign-links">
-        <%= link_to @campaign.productlink, @campaign.productlink, target: "_blank", class: "campaign-links" %>
-      </span>
+    <div class="button-center-con">
+      <%= link_to 'End Campaign', campaign_path(@campaign), class: "btn btn-danger button-center", method: :delete, data: { confirm: "Are you sure? This can't be undone." } %>
+    </div>
 
-    </p>
-    <br>
-    <p>
-      <h4><span class="blue">Your Email:</span></h4>
-      <%= @campaign.name %>
-    </p>
-    <br>
-    <p>
-      <h4><span class="blue">Your Website:</span></h4>
-      <%= @campaign.website %>
-    </p>
-    <br>
-    <p>
-      <h4><span class="blue">Product Description:</span></h4>
-      <%= @campaign.description %>
-    </p>
-    <br>
-    <p>
-      <h4><span class="blue">Date Started:</span></h4>
-      <%= @campaign.date %>
-    </p>
   </body>
 </html>

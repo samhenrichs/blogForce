@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get 'pages/oops'
   get 'pages/notyours'
   get 'pages/list'
+  get 'pages/help'
 
 end

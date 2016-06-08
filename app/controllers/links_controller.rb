@@ -10,17 +10,11 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-
-    if @link.save
-      redirect_to @link
-    else
-      render 'new'
-    end
-
+    @link.save
   end
 
   def show
-      @link = Link.find(params[:id])
+      @link = Link.friendly.find(params[:id])
 
       if user_signed_in?
 
@@ -30,12 +24,14 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @link = Link.find(params[:id])
-    
+    @link = Link.friendly.find(params[:id])
+
+    @link.id = @link.title
+
   end
 
   def update
-    @link = Link.find(params[:id])
+    @link = Link.friendly.find(params[:id])
 
     if @link.update(link_params)
       redirect_to @link
@@ -46,7 +42,7 @@ class LinksController < ApplicationController
   end
 
   def destroy
-    @link = Link.find(params[:id])
+    @link = Link.friendly.find(params[:id])
 
     @link.destroy
     redirect_to root_path
@@ -55,7 +51,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:title, :url, :description, :image, :product)
+    params.require(:link).permit(:title, :url, :description, :image, :product, :cheese)
   end
 
 end
